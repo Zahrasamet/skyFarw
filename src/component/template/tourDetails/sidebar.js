@@ -11,12 +11,13 @@ function BookingSidebar({tour}) {
             <h4 className="text-lg font-semibold pb-1">Date:</h4>
             <form method="post">
             <div className="flex items-center gap-2 mt-5">
-                <label className="text-md font-[500]">Adult</label>
+                <label className="text-md font-[500]">Adult:</label>
                 <div className="relative w-full">
-                    <FontAwesomeIcon icon={faUser} className="absolute top-3.5"/>
+                    <FontAwesomeIcon icon={faUser} className="absolute top-3.5 left-2"/>
+                    <input type="number" placeholder="5" className="border-2 border-gray-100 outline-0 rounded-md p-2"/>
                 </div>
             </div>
-            </form>git
+            </form>
         </div>
     </>
   )
