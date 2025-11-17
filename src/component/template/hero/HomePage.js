@@ -34,9 +34,9 @@ function HomePage() {
       {/* Travel Section */}
       <div className="travel px-[2%] sm:px-[8%] lg:px-[12%] py-[80px] lg:py-[120px] flex flex-col gap-10 lg:gap-14">
         <div className="travel-content text-center">
-          <h1 className="unbounded-font text-4xl font-semibold pb-3">
+          <h2 className="unbounded-font text-4xl font-semibold pb-3">
             Find Out The Best Travel Choice in Asia
-          </h1>
+          </h2>
           <p className="w-[60%] mx-auto text-[#193555]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, repellendus fuga tempore molestiae alias.
           </p>

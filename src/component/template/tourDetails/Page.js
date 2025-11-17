@@ -25,11 +25,11 @@ export default function Page({ tour }) {
         </ul>
       </div>
 
-      {/* Main Content */}
+      
       <div className="tour-details-container w-full flex flex-col lg:flex-row justify-between items-start
         px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[90px] gap-5 relative">
 
-        {/* Left Content */}
+      
         <div className="xl:w-[70%] lg:w-[60%] w-full relative">
           
           {/* Main Image */}
@@ -67,7 +67,7 @@ export default function Page({ tour }) {
               </h4>
             </div>
 
-            {/* Description */}
+           
             <h4 className="text-lg sm:text-xl font-semibold pb-3 pt-4">Tour Description</h4>
 
             <p className="text-[#94a3b8] text-sm pb-3 leading-relaxed">
