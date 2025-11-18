@@ -86,17 +86,17 @@ function BookingSidebar({ tour }) {
           </Swiper>
       </div>
 
-      {/* ======================= MODAL ======================= */}
+     
       {showForm && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center">
 
-          {/* Overlay */}
+         
           <div 
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setShowForm(false)}
           ></div>
 
-          {/* Modal Box */}
+         
           <div className="
             bg-white 
             w-[95%] max-w-[900px] 
@@ -109,7 +109,7 @@ function BookingSidebar({ tour }) {
             p-6 lg:p-10
           ">
 
-            {/* Close Button */}
+           
             <button 
               onClick={() => setShowForm(false)}
               className="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl"
@@ -118,7 +118,7 @@ function BookingSidebar({ tour }) {
             </button>
 
             {/* Title */}
-            <h2 className="text-center unbounded-font mb-8 text-2xl lg:text-4xl">
+            <h2 className="text-center unbounded-font font-bold mb-8 text-2xl lg:text-4xl">
               Tour Booking Form
             </h2>
 

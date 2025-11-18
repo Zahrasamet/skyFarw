@@ -5,9 +5,15 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import toursData from "../../../../data/toursData.json"
 
+import About01 from "../../../../public/Images/about-01.webp"
+
+import Author01 from "../../../../public/Images/author-01.webp"
+import Author02 from "../../../../public/Images/author-02.webp"
+import Author03 from "../../../../public/Images/author-03.webp"
+import Author04 from "../../../../public/Images/author-04.webp"
 
 function HomePage() {
- const router = useRouter();
+  const router = useRouter();
 
   return (
     <>
@@ -75,9 +81,46 @@ function HomePage() {
           ))}
         </div>
       </div>
+
+      {/* About */}
+      <div className='about py-[50px] lg:py-[90px] px-[2%] sm:px-[8%] lg:px-[12%]'>
+        <div className='flex flex-col lg:flex-row w-full gap-5 lg:gap-0'>
+          <div className='lg:w-[50%]'>
+            <div className='about-section flex flex-col'>
+              <div className='about-heading lg:px-[12%]'>
+                <h1 className='text-2xl xl:text-4xl font-bold mb-4'>Begin Your New Life 
+                  Experience With Exploring New Destination
+                </h1>
+                <p className='mb-3 w-[90%] text-[#7a7a7a] text-sm'>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
+                </p>
+                <p className='w-[90%] text-[#7a7a7a] text-sm'>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
+                </p>
+              </div>
+      <div className='about-image mt-8 hidden lg:flex'>
+        <Image src={About01} alt='about01' className='rounded-r-2xl w-[45%] h-[600px] just-cover absolute left-0'/>
+      </div>
+            </div>
+          </div> 
+          <div className='lg:w-[50%]'>
+            <div className='bg-[#000] text-white p-6 rounded-2xl flex md:flex-row justify-between md:gap-20'>
+              <div className='autor-sec'>
+                <div className='flex -space-x-3'>
+                  <Image src={Author01} alt='Author01' className='w-12 h-12 rounded-full border-2 border-black'/>
+                  <Image src={Author02} alt='Author02' className='w-12 h-12 rounded-full border-2 border-black'/>
+                  <Image src={Author03} alt='Author03' className='w-12 h-12 rounded-full border-2 border-black'/>
+                  <Image src={Author04} alt='Author04' className='w-12 h-12 rounded-full border-2 border-black'/>
+                </div>
+                <h2 className='text-white mt-5 text-3xl'>1234 &nbsp; +</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </>
   );
-  
 }
 
-export default HomePage
+export default HomePage;
