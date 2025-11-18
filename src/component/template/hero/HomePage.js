@@ -6,6 +6,8 @@ import Image from "next/image";
 import toursData from "../../../../data/toursData.json"
 
 import About01 from "../../../../public/Images/about-01.webp"
+import About02 from "../../../../public/Images/about-02.webp"
+import About03 from "../../../../public/Images/about-03.webp"
 
 import Author01 from "../../../../public/Images/author-01.webp"
 import Author02 from "../../../../public/Images/author-02.webp"
@@ -114,6 +116,23 @@ function HomePage() {
                 </div>
                 <h2 className='text-white mt-5 text-3xl'>1234 &nbsp; +</h2>
               </div>
+              <div className='customers'>
+                <h1 className='text-white text-2xl mt-2 mb-3'>Customer Love the tour experince</h1>
+                <p className='text-[#7a7a7a]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+              </div>
+            </div>
+            <div className='about-travel'>
+               <Image src={About02} alt='About02' className='rounded-2xl mt-10 object-cover'/>
+            </div>
+              <div className='about-place'>
+               <Image src={About03} alt='About03' className='rounded-2xl h-[350px] sm:w-[50%] w-full object-cover'/>
+               <div className='bg-[#000] text-white p-6 rounded-2xl
+                flex justify-between gap-20 sm:w-[300px] w-full'>
+                  <div className='cur'>
+                    <h1 className="text-white text-2xl mt-2 mb-3">Join Our Asian Travel Trip</h1>
+                    <p className='text-[#7a7a7a]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
