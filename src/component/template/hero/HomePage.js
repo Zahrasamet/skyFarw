@@ -9,143 +9,32 @@ import About01 from "../../../../public/Images/about-01.webp"
 import About02 from "../../../../public/Images/about-02.webp"
 import About03 from "../../../../public/Images/about-03.webp"
 
-import Author01 from "../../../../public/Images/author-01.webp"
-import Author02 from "../../../../public/Images/author-02.webp"
-import Author03 from "../../../../public/Images/author-03.webp"
-import Author04 from "../../../../public/Images/author-04.webp"
+
 
 import user from "../../../../public/assests/user.png"
+import BlogPage1 from "../../../../public/assests/Blog-Page-01.webp";
+import BlogPage2 from "../../../../public/assests/Blog-Page-02.webp";
+import BlogPage3 from "../../../../public/assests/Blog-Page-03.webp";
+
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css"
+import Hero from './Hero';
+import Travel from './Travel';
+import About from './About';
 
 function HomePage() {
   const router = useRouter();
 
   return (
     <>
-      {/* Hero Section */}
-      <div className="hero h-screen flex justify-center items-center z-10">
-        <div className="hero-content relative text-center">
-          <h1 className="xl:text-8xl lg:text-7xl md:text-6xl text-4xl unbounded-font font-bold text-white">
-            Find Your Best <br /> Travel Packages
-          </h1>
-          <p className="pt-3 text-white md:pb-10 pb-5">
-            Discover the world with our unforgettable travel tours — your journey to adventure starts here.
-          </p>
-          <button
-            onClick={() => router.push("/")}
-            className="btn bg-white group text-[#193555] hover:bg-[#193555] font-bold px-6 py-4 rounded-full cursor-pointer transition-colors duration-500"
-          >
-            <span className="unbounded-font text-sm xl:text-md uppercase group-hover:text-white transition-colors duration-500 tracking-wider">
-              View All Tours
-            </span>
-          </button>
-        </div>
-      </div>
-
-      {/* Travel Section */}
-      <div className="travel px-[2%] sm:px-[8%] lg:px-[12%] py-[80px] lg:py-[120px] flex flex-col gap-10 lg:gap-14">
-        <div className="travel-content text-center">
-          <h2 className="unbounded-font text-4xl font-semibold pb-3">
-            Find Out The Best Travel Choice in Asia
-          </h2>
-          <p className="w-[60%] mx-auto text-[#193555]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, repellendus fuga tempore molestiae alias.
-          </p>
-        </div>
-
-        <div className="travel-wrapper grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-          {toursData.map((tour) => (
-            <div
-              key={tour.id}
-              onClick={() => router.push(`/tourDetails/${tour.id}`)}
-              className="travel-item rounded-xl overflow-hidden relative group transition-all duration-300 cursor-pointer"
-            >
-              <Image
-                src={tour.Images}
-                width={400}
-                height={300}
-                alt={tour.title}
-                className="w-full h-full object-cover group-hover:scale-120 transition-transform duration-500"
-              />
-
-              <div className="travel-content absolute bottom-0 left-0 flex justify-between items-center w-full p-3 z-10 text-white bg-gradient-to-t from-black/70 to-transparent">
-                <div>
-                  <h2 className="text-xl font-semibold unbounded-font pb-1">{tour.title}</h2>
-                  <p className="text-[#ffffff91] text-xs flex items-center gap-1">
-                    <FontAwesomeIcon icon={faLocationDot} />
-                    {tour.location}
-                  </p>
-                </div>
-                <h4 className="text-xl font-semibold unbounded-font text-right">
-                  <span className="text-[#ffffff91] text-xs font-normal">Start From</span>
-                  <br />
-                  {tour.price}
-                </h4>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* About */}
-      <div className='about py-[50px] lg:py-[90px] px-[2%] sm:px-[8%] lg:px-[12%]'>
-        <div className='flex flex-col lg:flex-row w-full gap-5 lg:gap-0'>
-          <div className='lg:w-[50%]'>
-            <div className='about-section flex flex-col'>
-              <div className='about-heading lg:px-[12%]'>
-                <h1 className='text-2xl xl:text-4xl font-bold mb-4'>Begin Your New Life 
-                  Experience With Exploring New Destination
-                </h1>
-                <p className='mb-3 w-[90%] text-[#7a7a7a] text-sm'>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
-                </p>
-                <p className='w-[90%] text-[#7a7a7a] text-sm'>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?
-                </p>
-              </div>
-      <div className='about-image mt-8 hidden lg:flex'>
-        <Image src={About01} alt='about01' className='rounded-r-2xl w-[45%] h-[600px] just-cover absolute left-0'/>
-      </div>
-            </div>
-          </div> 
-          <div className='lg:w-[50%]'>
-            <div className='bg-[#000] text-white p-6 rounded-2xl flex md:flex-row justify-between md:gap-20'>
-              <div className='autor-sec'>
-                <div className='flex -space-x-3'>
-                  <Image src={Author01} alt='Author01' className='w-12 h-12 rounded-full border-2 border-black'/>
-                  <Image src={Author02} alt='Author02' className='w-12 h-12 rounded-full border-2 border-black'/>
-                  <Image src={Author03} alt='Author03' className='w-12 h-12 rounded-full border-2 border-black'/>
-                  <Image src={Author04} alt='Author04' className='w-12 h-12 rounded-full border-2 border-black'/>
-                </div>
-                <h2 className='text-white mt-5 text-3xl'>1234 &nbsp; +</h2>
-              </div>
-              <div className='customers'>
-                <h1 className='text-white text-2xl mt-2 mb-3'>Customer Love the tour experince</h1>
-                <p className='text-[#7a7a7a]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-              </div>
-            </div>
-            <div className='about-travel'>
-               <Image src={About02} alt='About02' className='rounded-2xl mt-10 object-cover'/>
-            </div>
-              <div className='about-place flex sm:flex-row flex-col items-start gap-5 mt-10'>
-               <Image src={About03} alt='About03' className='rounded-2xl h-[350px] sm:w-[50%] w-full object-cover'/>
-               <div className='bg-[#000] text-white p-6 rounded-2xl
-                flex justify-between gap-20 sm:w-[300px] w-full'>
-                  <div className='cur'>
-                    <h1 className="text-white text-2xl mt-2 mb-3">Join Our Asian Travel Trip</h1>
-                    <p className='text-[#7a7a7a]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
+    <Hero/>
+      <Travel/>
+      <About/>
 
 <div className='testimonials bg-[#0e0700] px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[90px]'>
 
-  {/* عنوان و متن بالا */}
   <div className='pb-10 testimonials-content flex justify-between lg:flex-row gap-3 lg:gap-0 items-start w-full'>
     <h2 className='xl:w-[50%] w-full text-white text-4xl leading-tight unbounded-font'>
       Discover A Mesmerizing Nature Landscape & Stunning Culture
@@ -162,53 +51,95 @@ function HomePage() {
       </button>
     </div>
   </div>
-
-  {/* اسلایدر */}
-  <Swiper
-    spaceBetween={20}
-    slidesPerView={3}
-    breakpoints={{
-      1199: { slidesPerView: 3 },
-      767: { slidesPerView: 2 },
-      575: { slidesPerView: 1 },
-    }}
-    loop={true}
-  >
-
-    {[...Array(6)].map((_, index) => (
-      <SwiperSlide key={index}>
-        
-        {/* کارت تُمپلیت کاملاً مثل عکس */}
-        <div className='bg-[#191919] p-6 rounded-2xl h-[260px] flex flex-col justify-between shadow-md'>
-
-          {/* متن بالا */}
-          <p className='text-[#ffffff91] text-sm leading-relaxed'>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus...
-          </p>
-
-          {/* پروفایل پایین (عکس + نام + عنوان) */}
-          <div className='flex items-center gap-3 mt-4'>
-            <Image
-              src={user}
-              width={45}
-              height={45}
-              className='rounded-full'
-              alt='User'
-            />
-            <div>
-              <h4 className='unbounded-font text-white font-semibold text-sm'>
-                User Name {index + 1}
-              </h4>
-              <p className='text-[#ffffff91] text-xs'>Designation</p>
-            </div>
+  
+ <Swiper
+  spaceBetween={20}
+  loop={true}
+  breakpoints={{
+    1199: { slidesPerView: 3 }, 
+    767: { slidesPerView: 2 }, 
+    0: { slidesPerView: 1 },   
+  }}
+>
+  {[...Array(6)].map((_, index) => (
+    <SwiperSlide key={index}>
+      <div className='
+        bg-[#191919] 
+        p-6 
+        rounded-2xl 
+        shadow-md
+        flex 
+        flex-col 
+        justify-between
+        h-auto sm:h-[240px] md:h-[250px] lg:h-[260px]
+      '>
+        <p className='text-[#ffffff91] text-sm leading-relaxed mb-4'>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus...
+        </p>
+        <div className='flex items-center gap-3'>
+          <Image
+            src={user}
+            width={50}
+            height={50}
+            className='rounded-full'
+            alt='User'
+          />
+          <div>
+            <h4 className='unbounded-font text-white font-semibold text-sm'>
+              User Name {index + 1}
+            </h4>
+            <p className='text-[#ffffff91] text-xs'>Designation</p>
           </div>
-
         </div>
-      </SwiperSlide>
-    ))}
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+</div>
 
-  </Swiper>
+<div className='blog px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[90px]'>
+  <div className='w-full pb-5'>
+    <h1 className='unbounded-font text-4xl font-semibold pb-3'>Our Latest Blog</h1>
+    <p className='text-[#193555]'>
+       Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+    </p>
+  </div>
+  <div className='blog-wrapper grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8'>
 
+    {/* Blog Card 1 */}
+    <div className='blog-card'>
+      <Image src={BlogPage1} alt='blogPage01' className='rounded-[20px]'/>
+      <h2 className='font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-2'>
+        Tropical Bliss: Discover Asia's Hidden Beach Paradises
+      </h2>
+      <p className='text-[#7a7a7a] text-sm'>
+        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+      </p>
+    </div>
+
+    {/* Blog Card 2 */}
+    <div className='blog-card'>
+      <Image src={BlogPage2} alt='blogPage02' className='rounded-[20px]'/>
+      <h2 className='font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-2'>
+        Tropical Bliss: Discover Asia's Hidden Beach Paradises
+      </h2>
+      <p className='text-[#7a7a7a] text-sm'>
+        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+      </p>
+    </div>
+
+    {/* Blog Card 3 */}
+    <div className='blog-card'>
+      <Image src={BlogPage3} alt='blogPage03' className='rounded-[20px]'/>
+      <h2 className='font-semibold text-lg sm:text-xl mt-6 unbounded-font mb-2'>
+        Tropical Bliss: Discover Asia's Hidden Beach Paradises
+      </h2>
+      <p className='text-[#7a7a7a] text-sm'>
+        Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+      </p>
+    </div>
+
+  </div>
 </div>
 
     </>
