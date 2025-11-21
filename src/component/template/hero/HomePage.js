@@ -7,6 +7,7 @@ import Travel from './Travel';
 import About from './About';
 import Testimonials from './Testimonials';
 import Blog from './Blog';
+import Experience from './Experience';
 
 function HomePage() {
   const router = useRouter();
@@ -19,6 +20,7 @@ function HomePage() {
       <About/>
       <Testimonials/>
       <Blog/>
+      <Experience/>
     </>
   );
 }
