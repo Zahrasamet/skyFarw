@@ -39,7 +39,10 @@ function Experience() {
     answer: "Spring and autumn are ideal for Asia, while late spring and summer are best for Europe due to pleasant weather and seasonal events."
   }
 ];
-    
+
+  // آرایه‌ی ref برای هر آیتم (بیرون از map)
+  const contentRefs = useRef([])
+
   return (
     <>
         <div className='experience px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[90px] bg-[#0e0700]'>
@@ -59,20 +62,15 @@ function Experience() {
               </div>  
             </div>
 
-            <fiv className="grid grid-cols-1 gap-8 mt-10 mx-auto w-[100%] lg:mx-auto lg:w-[80%]">
+            <div className="grid grid-cols-1 gap-8 mt-10 mx-auto w-[100%] lg:mx-auto lg:w-[80%]">
               {faqData.map((item, index) => {
                 const isOpen = openIndex === index
-                const contentRef = useRef(null)
-                const [height, setHeight] = useState(0)
 
-                useEffect(() => {
-                  if(isOpen && contentRef.current){
-                    setHeight(contentRef.current.scrollHeight)
-                  }
-                  else{
-                    setHeight(0)
-                  }
-                }, [isOpen])
+                // ارتفاع واقعی از scrollHeight هر ref گرفته می‌شود (در هر رندر، با تغییر openIndex دوباره محاسبه می‌شود)
+                const maxHeight = isOpen && contentRefs.current[index]
+                  ? contentRefs.current[index].scrollHeight + "px"
+                  : "0px"
+
                 return (
                   <div key={index} className='border-b border-gray-700'>
                     <button onClick={() => toggle(index)}
@@ -80,10 +78,19 @@ function Experience() {
                         <span>{item.question}</span>
                         <FontAwesomeIcon icon={isOpen ? faAngleUp : faAngleDown} className='ml-2'/>
                       </button>
+                      <div 
+                      style={{maxHeight}} 
+                      className='transition-all duration-500 ease-in-out overflow-hidden'>
+                        <div
+                          ref={(el) => (contentRefs.current[index] = el)}
+                        >
+                          <p className='text-gray-400 px-2 pb-4'>{item.answer}</p>
+                        </div>
+                      </div>
                   </div>
                 )
               })}
-            </fiv>
+            </div>
         </div>
     </>
   )

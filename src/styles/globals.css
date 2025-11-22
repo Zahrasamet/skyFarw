@@ -139,3 +139,28 @@
 ::-webkit-slider-thumb:hover{
   background-color: #0f243d;
 }
+
+.contact-banner{
+  height: 700px;
+  background: url(../../public/Images/Contact-banner-bg.webp);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-banner::after{
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #00000082;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+@media (max-width:767px){
+  .contact-banner{
+    height: 500px;
+  }
+}

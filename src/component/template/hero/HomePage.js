@@ -8,6 +8,7 @@ import About from './About';
 import Testimonials from './Testimonials';
 import Blog from './Blog';
 import Experience from './Experience';
+import ContactBanner from './Contact';
 
 function HomePage() {
   const router = useRouter();
@@ -21,6 +22,7 @@ function HomePage() {
       <Testimonials/>
       <Blog/>
       <Experience/>
+      <ContactBanner/>
     </>
   );
 }
